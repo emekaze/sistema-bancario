@@ -37,7 +37,7 @@ public class SistemaBancario {
         input.nextLine();
 
         switch (num) {
-            case 1:
+            case 1: // EFETUAR CADASTRO
                 System.out.print("\033\143"); //Limpar tela
 
                 System.out.println("========== Abrir conta ==========");
@@ -66,7 +66,7 @@ public class SistemaBancario {
                 System.out.print("\033\143"); //Limpar tela
 
                 break;
-            case 2:
+            case 2: // REALIZACAO DE DEPOSITOS
                 System.out.print("\033\143"); //Limpar tela
 
                 System.out.println("========== Realizar deposito ==========");
@@ -79,7 +79,7 @@ public class SistemaBancario {
                     } else {
                         System.out.println("Digite o valor a ser depositado");
 
-                        if(input.hasNextFloat()){
+                        if(input.hasNextFloat()){ // VERIFICA SE O INPUT EH UM VALOR NUMERICO
                             valorDeposito = input.nextFloat();
                             input.nextLine();
     
@@ -88,7 +88,7 @@ public class SistemaBancario {
                                 System.out.println("Impossivel depositar valor menor ou igual a 0!");
                                 
                             } else {
-                                valorValidacao = true;
+                                valorValidacao = true; // REALIZA O DEPOSITO E SAI DO LOOP
                                 System.out.print("\033\143");
                                 saldoAtual += valorDeposito;
                                 qtdDepositos++;
@@ -104,14 +104,14 @@ public class SistemaBancario {
     
                     }
                 }
-                valorValidacao = false;
+                valorValidacao = false; // RECEBE FALSO PARA QUE SEJA POSSIVEL REALIZAR O PROXIMO DEPOSITO / SE CONTINUASSE VERDADEIRO, ELE PULA O LOOP E FECHA O CASE 
 
                 System.out.println("Pressione ENTER para voltar ao menu.");
                 input.nextLine();
                 System.out.print("\033\143");
                 break;
 
-            case 3:
+            case 3: // REALIZACAO DE SAQUES
                 System.out.print("\033\143"); //Limpar tela
 
                 System.out.println("========== Realizar saque ==========");
@@ -167,19 +167,19 @@ public class SistemaBancario {
                 System.out.print("\033\143");
                 break;
 
-            case 4:
+            case 4: // APLICACAO DE JUROS
             System.out.println("Pressione ENTER para voltar ao menu.");
             input.nextLine();
             System.out.print("\033\143");
                 break;
 
-            case 5:
+            case 5: // REALIZACAO DE EMPRESTIMOS
             System.out.println("Pressione ENTER para voltar ao menu.");
             input.nextLine();
             System.out.print("\033\143");
                 break;
 
-            case 6:
+            case 6: // EXTRATO
                 System.out.print("\033\143"); //Limpar tela
 
                 System.out.println("========== Extrato ==========");
@@ -205,7 +205,7 @@ public class SistemaBancario {
                 System.out.print("\033\143");
                 break;
 
-            case 8:
+            case 8: // FECHAR PROGRAMA
                 System.out.print("\033\143");
                 sair = true;
                 System.out.println("Encerrando programa...");
